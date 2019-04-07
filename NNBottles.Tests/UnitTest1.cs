@@ -63,9 +63,26 @@ namespace NNBottles.Tests
                                     "\nTake one down and pass it around, 98 bottles of beer on the wall.\n" +
                                     "\n" +
                                     "98 bottles of beer on the wall, 98 bottles of beer." +
-                                    "\nTake one down and pass it around, 97 bottles of beer on the wall.\n";
+                                    "\nTake one down and pass it around, 97 bottles of beer on the wall.\n" +
+                                    "\n";
             var actual = Bottles.Verses(99, 98);
             Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void TestAFewVerses()
+        {
+            const string expected = "2 bottles of beer on the wall, 2 bottles of beer." +
+                                    "\nTake one down and pass it around, 1 bottle of beer on the wall.\n" +
+                                    "\n" +
+                                    "1 bottle of beer on the wall, 1 bottle of beer." +
+                                    "\nTake it down and pass it around, no more bottles of beer on the wall.\n" +
+                                    "\n" +
+                                    "No more bottles of beer on the wall, no more bottles of beer." +
+                                    "\nGo to the store and buy some more, 99 bottles of beer on the wall.\n" +
+                                    "\n";
+           var actual = Bottles.Verses(2, 0);
+           Assert.AreEqual(expected, actual);
         }
     }
 }

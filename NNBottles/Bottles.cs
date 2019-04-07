@@ -1,3 +1,4 @@
+using System.Text;
 using System.Xml.Linq;
 
 namespace NNBottles
@@ -33,7 +34,12 @@ namespace NNBottles
 
         public static string Verses(int startVerse, int endVerse)
         {
-            return Verse(99) + "\n" + Verse(98);
+            var verseBuilder = new StringBuilder();
+            for (var i = startVerse; i>= endVerse; i--)
+            {
+                verseBuilder.Append(Verse(i) + "\n");
+            }
+            return verseBuilder.ToString();
         }
     }
 }
