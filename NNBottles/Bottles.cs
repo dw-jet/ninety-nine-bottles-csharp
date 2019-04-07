@@ -41,5 +41,10 @@ namespace NNBottles
             }
             return verseBuilder.ToString();
         }
+
+        public static string Song()
+        {
+            return Verses(99, 0);
+        }
     }
 }
