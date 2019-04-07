@@ -55,5 +55,17 @@ namespace NNBottles.Tests
             var actual = Bottles.Verse(0);
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void TestACoupleOfVerses()
+        {
+            const string expected = "99 bottles of beer on the wall, 99 bottles of beer." +
+                                    "\nTake one down and pass it around, 98 bottles of beer on the wall.\n" +
+                                    "\n" +
+                                    "98 bottles of beer on the wall, 98 bottles of beer." +
+                                    "\nTake one down and pass it around, 97 bottles of beer on the wall.\n";
+            var actual = Bottles.Verses(99, 98);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

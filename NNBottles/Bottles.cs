@@ -1,6 +1,8 @@
+using System.Xml.Linq;
+
 namespace NNBottles
 {
-    public class Bottles
+    public static class Bottles
     {
         public static string Verse(int verseNumber)
         {
@@ -27,6 +29,11 @@ namespace NNBottles
                            $"\nTake one down and pass it around, {verseNumber - 1} bottles of beer on the wall.\n";
                 }
             }
+        }
+
+        public static string Verses(int startVerse, int endVerse)
+        {
+            return Verse(99) + "\n" + Verse(98);
         }
     }
 }
