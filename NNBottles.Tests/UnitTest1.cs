@@ -46,5 +46,14 @@ namespace NNBottles.Tests
             var actual = Bottles.Verse(1);
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void TestVerse0()
+        {
+            const string expected = "No more bottles of beer on the wall, no more bottles of beer." +
+                                    "\nGo to the store and buy some more, 99 bottles of beer on the wall.\n";
+            var actual = Bottles.Verse(0);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
