@@ -1,11 +1,15 @@
+using System.IO;
+using System.Net;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
 using NNBottles;
-    
+using NUnit.Framework.Constraints;
+
 namespace NNBottles.Tests
 {
     public class Tests
     {
+
         [SetUp]
         public void Setup()
         {
@@ -83,6 +87,14 @@ namespace NNBottles.Tests
                                     "\n";
            var actual = Bottles.Verses(2, 0);
            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void TestSong()
+        {
+            var expected = File.ReadAllText("/home/icejet/lyrics.txt");
+            var actual = Bottles.Song();
+            Assert.AreEqual(expected, actual);
         }
     }
 }
