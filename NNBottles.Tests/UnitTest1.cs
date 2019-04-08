@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
@@ -92,7 +93,8 @@ namespace NNBottles.Tests
         [Test]
         public void TestSong()
         {
-            var expected = File.ReadAllText("/home/icejet/lyrics.txt");
+            var lyricsFile = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../lyrics.txt"));  
+            var expected = File.ReadAllText(lyricsFile);
             var actual = Bottles.Song();
             Assert.AreEqual(expected, actual);
         }
