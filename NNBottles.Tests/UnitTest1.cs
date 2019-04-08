@@ -93,8 +93,9 @@ namespace NNBottles.Tests
         [Test]
         public void TestSong()
         {
-            var lyricsFile = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../lyrics.txt"));  
-            var expected = File.ReadAllText(lyricsFile);
+            var lyricsFile = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../lyrics.txt"));
+            var fileContents = File.ReadAllText(lyricsFile);
+            var expected = fileContents.Replace("\r\n", "\n");
             var actual = Bottles.Song();
             Assert.AreEqual(expected, actual);
         }
