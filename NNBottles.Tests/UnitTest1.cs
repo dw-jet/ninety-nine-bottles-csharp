@@ -1,10 +1,6 @@
 using System;
 using System.IO;
-using System.Net;
-using System.Runtime.InteropServices;
 using NUnit.Framework;
-using NNBottles;
-using NUnit.Framework.Constraints;
 
 namespace NNBottles.Tests
 {
