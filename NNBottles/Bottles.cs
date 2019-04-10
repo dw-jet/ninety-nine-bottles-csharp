@@ -8,9 +8,18 @@ namespace NNBottles
         {
             return number == 1 ? "bottle" : "bottles";
         }
-        public static string Verse(int verseNumber)
+
+        private static string Pronoun(int number)
         {
-            switch (verseNumber)
+            if (number == 1)
+            {
+                return "it";
+            }
+            else return "one";
+        }
+        public static string Verse(int number)
+        {
+            switch (number)
             {
                 case 0:
                 {
@@ -19,13 +28,13 @@ namespace NNBottles
                 }
                 case 1:
                 {
-                    return $"{verseNumber} {Container(verseNumber)} of beer on the wall, {verseNumber} {Container(verseNumber)} of beer." +
-                           "\nTake it down and pass it around, no more bottles of beer on the wall.\n";
+                    return $"{number} {Container(number)} of beer on the wall, {number} {Container(number)} of beer." +
+                           $"\nTake {Pronoun(number)} down and pass it around, no more bottles of beer on the wall.\n";
                 }
                 default:
                 {
-                    return $"{verseNumber} {Container(verseNumber)} of beer on the wall, {verseNumber} {Container(verseNumber)} of beer." +
-                           $"\nTake one down and pass it around, {verseNumber - 1} {Container(verseNumber - 1)} of beer on the wall.\n";
+                    return $"{number} {Container(number)} of beer on the wall, {number} {Container(number)} of beer." +
+                           $"\nTake {Pronoun(number)} down and pass it around, {number - 1} {Container(number - 1)} of beer on the wall.\n";
                 }
             }
         }
