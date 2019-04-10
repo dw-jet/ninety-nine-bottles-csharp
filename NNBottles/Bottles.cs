@@ -19,12 +19,12 @@ namespace NNBottles
                 }
                 case 1:
                 {
-                    return "1 bottle of beer on the wall, 1 bottle of beer." +
+                    return $"{verseNumber} {Container(verseNumber)} of beer on the wall, {verseNumber} {Container(verseNumber)} of beer." +
                            "\nTake it down and pass it around, no more bottles of beer on the wall.\n";
                 }
                 default:
                 {
-                    return $"{verseNumber} bottles of beer on the wall, {verseNumber} bottles of beer." +
+                    return $"{verseNumber} {Container(verseNumber)} of beer on the wall, {verseNumber} {Container(verseNumber)} of beer." +
                            $"\nTake one down and pass it around, {verseNumber - 1} {Container(verseNumber - 1)} of beer on the wall.\n";
                 }
             }
