@@ -27,11 +27,6 @@ namespace NNBottles
                     return "No more bottles of beer on the wall, no more bottles of beer." +
                            "\nGo to the store and buy some more, 99 bottles of beer on the wall.\n";
                 }
-                case 1:
-                {
-                    return $"{number} {Container(number)} of beer on the wall, {number} {Container(number)} of beer." +
-                           $"\nTake {Pronoun(number)} down and pass it around, {Quantity(number - 1)} {Container(number - 1)} of beer on the wall.\n";
-                }
                 default:
                 {
                     return $"{number} {Container(number)} of beer on the wall, {number} {Container(number)} of beer." +
