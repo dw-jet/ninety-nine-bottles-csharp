@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 
 namespace NNBottles
@@ -8,14 +9,14 @@ namespace NNBottles
         {
             return number == 1 ? "bottle" : "bottles";
         }
-
         private static string Pronoun(int number)
         {
-            if (number == 1)
-            {
-                return "it";
-            }
-            else return "one";
+            return number == 1 ? "it" : "one";
+        }
+
+        private static string Quantity(int number)
+        {
+            return number == 0 ? "no more" : number.ToString();
         }
         public static string Verse(int number)
         {
@@ -29,12 +30,12 @@ namespace NNBottles
                 case 1:
                 {
                     return $"{number} {Container(number)} of beer on the wall, {number} {Container(number)} of beer." +
-                           $"\nTake {Pronoun(number)} down and pass it around, no more bottles of beer on the wall.\n";
+                           $"\nTake {Pronoun(number)} down and pass it around, {Quantity(number - 1)} {Container(number - 1)} of beer on the wall.\n";
                 }
                 default:
                 {
                     return $"{number} {Container(number)} of beer on the wall, {number} {Container(number)} of beer." +
-                           $"\nTake {Pronoun(number)} down and pass it around, {number - 1} {Container(number - 1)} of beer on the wall.\n";
+                           $"\nTake {Pronoun(number)} down and pass it around, {Quantity(number - 1)} {Container(number - 1)} of beer on the wall.\n";
                 }
             }
         }
