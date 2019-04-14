@@ -19,6 +19,16 @@ namespace NNBottles
             return number == 0 ? "no more" : number.ToString();
         }
 
+        private static string Action(int number)
+        {
+            return number == 0 ? "Go to the store and buy some more" : $"Take {Pronoun(number)} down and pass it around";
+        }
+
+        private static int Successor(int number)
+        {
+            return number == 0 ? 99 : number - 1;
+        }
+
         private static string Capitalize(string str)
         {
             // Capitalize the first letter of a string
@@ -33,19 +43,8 @@ namespace NNBottles
         }
         public static string Verse(int number)
         {
-            switch (number)
-            {
-                case 0:
-                {
-                    return $"{Capitalize(Quantity(number))} bottles of beer on the wall, no more bottles of beer." +
-                           "\nGo to the store and buy some more, 99 bottles of beer on the wall.\n";
-                }
-                default:
-                {
-                    return $"{Capitalize(Quantity(number))} {Container(number)} of beer on the wall, {number} {Container(number)} of beer." +
-                           $"\nTake {Pronoun(number)} down and pass it around, {Quantity(number - 1)} {Container(number - 1)} of beer on the wall.\n";
-                }
-            }
+            return $"{Capitalize(Quantity(number))} {Container(number)} of beer on the wall, {Quantity(number)} {Container(number)} of beer." +
+                   $"\n{Action(number)}, {Quantity(Successor(number))} {Container(Successor(number))} of beer on the wall.\n";
         }
 
         public static string Verses(int startVerse, int endVerse)
