@@ -7,26 +7,26 @@ namespace NNBottles
     {
         private static string Container(int number)
         {
-            return number == 1 ? "bottle" : "bottles";
+            return new BottleNumber(number).Container(number);
         }
         private static string Pronoun(int number)
         {
-            return number == 1 ? "it" : "one";
+            return new BottleNumber(number).Pronoun(number);
         }
 
         private static string Quantity(int number)
         {
-            return number == 0 ? "no more" : number.ToString();
+            return new BottleNumber(number).Quantity(number);
         }
 
         private static string Action(int number)
         {
-            return number == 0 ? "Go to the store and buy some more" : $"Take {Pronoun(number)} down and pass it around";
+            return new BottleNumber(number).Action(number);
         }
 
         private static int Successor(int number)
         {
-            return number == 0 ? 99 : number - 1;
+            return new BottleNumber(number).Successor(number);
         }
 
         private static string Capitalize(string str)
@@ -60,6 +60,42 @@ namespace NNBottles
         public static string Song()
         {
             return Verses(99, 0);
+        }
+    }
+
+    public class BottleNumber
+    {
+        public BottleNumber(int number)
+        {
+            _number = number;
+        }
+        
+        private int _number;
+
+        public int Number => _number;
+
+        public string Container(int number)
+        {
+            return number == 1 ? "bottle" : "bottles";
+        }
+        public string Pronoun(int number)
+        {
+            return number == 1 ? "it" : "one";
+        }
+
+        public string Quantity(int number)
+        {
+            return number == 0 ? "no more" : number.ToString();
+        }
+
+        public string Action(int number)
+        {
+            return number == 0 ? "Go to the store and buy some more" : $"Take {Pronoun(number)} down and pass it around";
+        }
+
+        public int Successor(int number)
+        {
+            return number == 0 ? 99 : number - 1;
         }
     }
 }
