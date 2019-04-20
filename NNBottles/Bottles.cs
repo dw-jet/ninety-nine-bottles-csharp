@@ -37,7 +37,7 @@ namespace NNBottles
             {
                 return string.Empty;
             }
-            char[] charArray = str.ToCharArray();
+            var charArray = str.ToCharArray();
             charArray[0] = char.ToUpper(charArray[0]);
             return new string(charArray);
         }
