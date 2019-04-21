@@ -7,26 +7,26 @@ namespace NNBottles
     {
         private static string Container(int number)
         {
-            return new BottleNumber(number).Container(number);
+            return new BottleNumber(number).Container();
         }
         private static string Pronoun(int number)
         {
-            return new BottleNumber(number).Pronoun(number);
+            return new BottleNumber(number).Pronoun();
         }
 
         private static string Quantity(int number)
         {
-            return new BottleNumber(number).Quantity(number);
+            return new BottleNumber(number).Quantity();
         }
 
         private static string Action(int number)
         {
-            return new BottleNumber(number).Action(number);
+            return new BottleNumber(number).Action();
         }
 
         private static int Successor(int number)
         {
-            return new BottleNumber(number).Successor(number);
+            return new BottleNumber(number).Successor();
         }
 
         private static string Capitalize(string str)
@@ -74,28 +74,28 @@ namespace NNBottles
 
         public int Number => _number;
 
-        public string Container(int number)
+        public string Container()
         {
-            return number == 1 ? "bottle" : "bottles";
+            return Number == 1 ? "bottle" : "bottles";
         }
-        public string Pronoun(int number)
+        public string Pronoun()
         {
-            return number == 1 ? "it" : "one";
-        }
-
-        public string Quantity(int number)
-        {
-            return number == 0 ? "no more" : number.ToString();
+            return Number == 1 ? "it" : "one";
         }
 
-        public string Action(int number)
+        public string Quantity()
         {
-            return number == 0 ? "Go to the store and buy some more" : $"Take {Pronoun(number)} down and pass it around";
+            return Number == 0 ? "no more" : Number.ToString();
         }
 
-        public int Successor(int number)
+        public string Action()
         {
-            return number == 0 ? 99 : number - 1;
+            return Number == 0 ? "Go to the store and buy some more" : $"Take {Pronoun()} down and pass it around";
+        }
+
+        public int Successor()
+        {
+            return Number == 0 ? 99 : Number - 1;
         }
     }
 }
