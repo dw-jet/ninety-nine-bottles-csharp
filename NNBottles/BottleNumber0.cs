@@ -14,9 +14,9 @@ namespace NNBottles
         {
             return "Go to the store and buy some more";
         }
-        public override int Successor()
+        public override BottleNumber Successor()
         {
-            return 99;
+            return BottleNumber.For(99);
         }
     }
 }

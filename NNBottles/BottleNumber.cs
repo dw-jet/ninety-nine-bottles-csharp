@@ -6,7 +6,18 @@ namespace NNBottles
         {
             _number = number;
         }
-        
+        public static BottleNumber For(int number)
+        {
+            switch (number)
+            {
+                case 0:
+                    return new BottleNumber0(number);
+                case 1:
+                    return new BottleNumber1(number);
+                default:
+                    return new BottleNumber(number);
+            }
+        }
         private int _number;
 
         public int Number => _number;
@@ -30,9 +41,9 @@ namespace NNBottles
             return $"Take {Pronoun()} down and pass it around";
         }
 
-        public virtual int Successor()
+        public virtual BottleNumber Successor()
         {
-            return Number - 1;
+            return BottleNumber.For(Number - 1);
         }
 
         public override string ToString()
