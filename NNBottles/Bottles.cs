@@ -43,8 +43,13 @@ namespace NNBottles
         }
         public static string Verse(int number)
         {
-            return $"{Capitalize(Quantity(number))} {Container(number)} of beer on the wall, {Quantity(number)} {Container(number)} of beer." +
-                   $"\n{Action(number)}, {Quantity(Successor(number))} {Container(Successor(number))} of beer on the wall.\n";
+            var bottleNumber = new BottleNumber(number);
+            // Shameless solution to finish the horizontal refactoring
+            // The problem is that Successor should return a new BottleNumber
+            var nextBottleNumber = new BottleNumber(bottleNumber.Successor());
+            
+            return $"{Capitalize(bottleNumber.Quantity())} {bottleNumber.Container()} of beer on the wall, {bottleNumber.Quantity()} {bottleNumber.Container()} of beer." +
+                   $"\n{bottleNumber.Action()}, {nextBottleNumber.Quantity()} {nextBottleNumber.Container()} of beer on the wall.\n";
         }
 
         public static string Verses(int startVerse, int endVerse)
