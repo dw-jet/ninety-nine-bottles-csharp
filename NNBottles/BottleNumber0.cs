@@ -1,0 +1,22 @@
+namespace NNBottles
+{
+    class BottleNumber0 : BottleNumber
+    {
+        public BottleNumber0(int number) : base(number)
+        {
+        }
+        public override string Quantity()
+        {
+            return "no more";
+        } 
+        
+        public override string Action()
+        {
+            return "Go to the store and buy some more";
+        }
+        public override int Successor()
+        {
+            return 99;
+        }
+    }
+}

@@ -11,28 +11,28 @@ namespace NNBottles
 
         public int Number => _number;
 
-        public string Container()
+        public virtual string Container()
         {
-            return Number == 1 ? "bottle" : "bottles";
+            return "bottles";
         }
-        public string Pronoun()
+        public virtual string Pronoun()
         {
-            return Number == 1 ? "it" : "one";
-        }
-
-        public string Quantity()
-        {
-            return Number == 0 ? "no more" : Number.ToString();
+            return "one";
         }
 
-        public string Action()
+        public virtual string Quantity()
         {
-            return Number == 0 ? "Go to the store and buy some more" : $"Take {Pronoun()} down and pass it around";
+            return Number.ToString();
         }
 
-        public int Successor()
+        public virtual string Action()
         {
-            return Number == 0 ? 99 : Number - 1;
+            return $"Take {Pronoun()} down and pass it around";
+        }
+
+        public virtual int Successor()
+        {
+            return Number - 1;
         }
 
         public override string ToString()
