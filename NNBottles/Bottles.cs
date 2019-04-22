@@ -5,11 +5,8 @@ namespace NNBottles
 {
     public static class Bottles
     {
-        private static string Capitalize(object obj)
+        private static string Capitalize(string str)
         {
-            var str = obj.ToString();
-            // Capitalize the first letter of a string
-            // in an efficient way
             if (string.IsNullOrEmpty(str))
             {
                 return string.Empty;
@@ -25,7 +22,7 @@ namespace NNBottles
             // The problem is that Successor should return a new BottleNumber
             var nextBottleNumber = new BottleNumber(bottleNumber.Successor());
             
-            return $"{Capitalize(bottleNumber)} of beer on the wall, {bottleNumber} of beer." +
+            return Capitalize($"{bottleNumber} of beer on the wall, {bottleNumber} of beer.") +
                    $"\n{bottleNumber.Action()}, {nextBottleNumber} of beer on the wall.\n";
         }
 
