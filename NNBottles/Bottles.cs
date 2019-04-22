@@ -5,30 +5,6 @@ namespace NNBottles
 {
     public static class Bottles
     {
-        private static string Container(int number)
-        {
-            return new BottleNumber(number).Container();
-        }
-        private static string Pronoun(int number)
-        {
-            return new BottleNumber(number).Pronoun();
-        }
-
-        private static string Quantity(int number)
-        {
-            return new BottleNumber(number).Quantity();
-        }
-
-        private static string Action(int number)
-        {
-            return new BottleNumber(number).Action();
-        }
-
-        private static int Successor(int number)
-        {
-            return new BottleNumber(number).Successor();
-        }
-
         private static string Capitalize(string str)
         {
             // Capitalize the first letter of a string
